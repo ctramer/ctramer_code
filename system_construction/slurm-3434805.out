@@ -1,0 +1,2 @@
+Can't locate Switch.pm in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at /var/spool/slurm/slurmd/job3434805/slurm_script line 5.
+BEGIN failed--compilation aborted at /var/spool/slurm/slurmd/job3434805/slurm_script line 5.
