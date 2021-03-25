@@ -1,10 +1,12 @@
 #1/bin/bash
-
-module load matlab
-for config in 1 2 3; do
-        cd config_${config}
-	rm -f rates.dat
-        for state in $(ls *.prmtop | cut -f 3 -d "_"| cut -f 1 -d ".");do
+num_configs=CONF_NUM
+matlab_name=MATLAB_MODULE_NAME
+module load $matlab_name
+for (( config=1; config<=$num_configs; config++)); do
+	cd config_${config}
+	rm -f rates.txt
+	touch rates.txt
+	for state in $(ls *.prmtop | cut -f 3 -d "_"| cut -f 1 -d ".");do
 		if [ "${state}" = "EX" ]; then	
 			cp ../km_calc.m .
 		else

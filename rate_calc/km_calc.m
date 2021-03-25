@@ -71,9 +71,14 @@ km=normpdf(0,means,sigs)/(6.5821*10^-16)*coupling^2*2*pi;
 %std((hollow_gap/23.061+correction)*1000)
 %feval(mydist,0)/(6.5821*10^-16)*coupling^2*2*pi
 tkm=sum((weights.*km)')';
-quantile(tkm,.1587)
-quantile(tkm,.5)
-quantile(tkm,.8413)
+fileID = fopen('rate_data.txt','a');
+fprintf(fileID,'Config CONF EX\rightarrowSTATE');
+fprintf(fileID,quantile(tkm,.1587));
+fprintf(fileID,quantile(tkm,.5));
+fprintf(fileID,quantile(tkm,.8413));
+fprintf(fileID,strcat(num2str(quantile(tkm,.5))," plus/minus ",...
+	num2str((quantile(tkm,.8413)+quantile(tkm,.1587))/2));
+fclose(fileID);
 
 set(gcf,'units','inches','position',[4 4 3.25 3.25]);
 ax = gca;
