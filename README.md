@@ -1,4 +1,4 @@
-Code for CTRAMER. This repository is private so that code can be added and modified without having to be a release version
+Code for CTRAMER v 0.9
 
 Software is divided in five modules, each of which focus on a specific calculation
 1)	Module 1: Molecule-level electronic structure calculations
